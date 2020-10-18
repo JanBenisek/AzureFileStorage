@@ -2,7 +2,7 @@ import os
 from flask import Flask, flash, request, redirect, render_template, \
     url_for
 from werkzeug.utils import secure_filename
-from flask_dropzone import Dropzone
+# from flask_dropzone import Dropzone
 import connection_secret
 import file_manager as fm
 
@@ -12,7 +12,7 @@ app.config.from_pyfile('config.py')
 
 app.secret_key = connection_secret.secret_key
 
-dropzone = Dropzone(app)
+# dropzone = Dropzone(app)
 
 AFM = fm.AzureBlobManager(conn_str=connection_secret.conn_str,
                           container_name=app.config['AZURE_STORAGE_CONTAINER'])
@@ -22,7 +22,7 @@ AFM = fm.AzureBlobManager(conn_str=connection_secret.conn_str,
 def index():
     files = AFM.listBlobs()
     size = '{0:.3f} MB'.format(AFM.containerSize()/1e6)
-    return render_template('layout_dad.html', files=files, size=size)
+    return render_template('layout_static.html', files=files, size=size)
 
 
 @app.route('/', methods=['POST'])

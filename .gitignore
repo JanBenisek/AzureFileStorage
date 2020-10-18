@@ -1,4 +1,5 @@
 connection_secret.py
 environment.yml
+.azure/
 
 .vscode/

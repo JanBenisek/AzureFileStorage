@@ -22,7 +22,7 @@ AFM = fm.AzureBlobManager(conn_str=connection_secret.conn_str,
 def index():
     files = AFM.listBlobs()
     size = '{0:.3f} MB'.format(AFM.containerSize()/1e6)
-    return render_template('layout_static.html', files=files, size=size)
+    return render_template('layout_dad.html', files=files, size=size)
 
 
 @app.route('/', methods=['POST'])

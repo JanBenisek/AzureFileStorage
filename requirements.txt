@@ -1,5 +1,10 @@
 azure-core==1.8.2
 azure-storage-blob==12.5.0
+azure-identity==1.4.1
+azure-keyvault==4.2.0
+azure-keyvault-certificates==4.2.1
+azure-keyvault-keys==4.2.0
+azure-keyvault-secrets==4.2.0
 certifi==2020.6.20
 cffi==1.14.3
 chardet==3.0.4
